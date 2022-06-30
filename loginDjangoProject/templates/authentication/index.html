@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
     <title>Authentication</title>
 </head>
 <body>
@@ -16,20 +18,23 @@
         <span aria-hidden="true">&times;</span>
     </div>
     {% endfor %}
-
-    <h1>Welcome to the App</h1>
-
-    <!-- If the user is logged in... -->
-    {% if user.is_authenticated %}
-    <!-- ... it will show a message with his first name -->
-    <h2>Hello {{fname}}! you are successfully logged in. 🥳</h2>
-    <button type="submit"><a href="/signout">SignOut</a></button>
-
-    <!-- If the user is NOT logged in... -->
-    {% else %}
-    <button type="submit"><a href="/signup">SignUp</a></button>
-    <button type="submit"><a href="/signin">SignIn</a></button>
-    {% endif %}
+    <main >
+        <div class="main-box">
+            <h1>Welcome to the App</h1>
+        
+            <!-- If the user is logged in... -->
+            {% if user.is_authenticated %}
+            <!-- ... it will show a message with his first name -->
+            <h2>Hello {{fname}}! you are successfully logged in. 🥳</h2>
+            <button type="submit"><a href="/signout">SignOut</a></button>
+        
+            <!-- If the user is NOT logged in... -->
+            {% else %}
+            <button type="submit"><a href="/signup">SignUp</a></button>
+            <button type="submit"><a href="/signin">SignIn</a></button>
+            {% endif %}
+        </div>
+    </main>
     
 </body>
 </html>

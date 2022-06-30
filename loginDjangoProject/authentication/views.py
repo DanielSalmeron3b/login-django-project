@@ -1,5 +1,3 @@
-from re import U
-from django import conf
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import messages
